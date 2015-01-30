@@ -1,5 +1,231 @@
-<ion-view view-title="Css">
-	<ion-content>
-		<h1>CSS</h1>
+<ion-view view-title="Trying Ionic's CSS">
+	<div class="bar bar-subheader bar-positive">
+		<h2 class="title">I'm the subheader!</h2>
+	</div>
+	<ion-content class="has-subheader">
+		<h1>Trying styles</h1>
+
+		<h2>Buttons</h2>
+		<button class="button">Normal button</button>
+		<button class="button button-calm">Calm button</button>
+
+		<button class="button button-block button-royal">I'm a royal block</button>
+
+		<button class="button button-full button-dark">Full width dark button</button>
+
+		<button class="button button-small button-light">A minor button</button>
+
+		<button class="button button-outline button-assertive">Outlined assertive</button>
+		<button class="button button-outline button-block button-assertive">Outlined assertive block</button>
+
+		<button class="button button-clear button-block button-balanced">Almost a no-button</button>
+
+		<button class="button button-positive icon-left ion-android-archive">Icon button</button>
+
+		<div class="button-bar">
+			<button class="button ion-code button-calm"></button>
+			<button class="button ion-bag button-dark"></button>
+			<button class="button ion-cloud button-balanced"></button>
+			<button class="button ion-fork button-positive"></button>
+		</div>
+
+		<h2>Lists</h2>
+
+		<div class="list">
+			<div class="item item-divider-android">
+				Browser
+			</div>
+			<div class="item">JavaScript</div>
+			<div class="item">HTML</div>
+			<div class="item">CSS</div>
+
+			<div class="item item-divider item-divider-ios">
+				Server
+			</div>
+			<div class="item">Node</div>
+			<div class="item">Jade</div>
+		</div>
+
+		<div class="list">
+			<div class="item item-icon-left">
+				<i class="icon ion-alert"></i>
+				Alert
+			</div>
+			<div class="item item-icon-left item-icon-right">
+				<i class="icon ion-eye"></i>
+				Double icons
+				<i class="icon ion-disc"></i>
+			</div>
+			<div class="item item-button-left">
+				Call
+				<button class="button button-balanced">
+					<i class="icon ion-ios7-telephone"></i>
+				</button>
+			</div>
+			<div class="item item-icon-left">
+				<i class="icon ion-female"></i>
+				Title
+				<span class="item-note">with a subnote</span>
+			</div>
+			<div class="item item-icon-left">
+				<i class="icon ion-game-controller-a"></i>
+				Game controller
+				<span class="badge badge-positive">10</span>
+			</div>
+
+			<div class="item item-avatar">
+				<img src="images/ionic.png">
+				<h2>Ionic</h2>
+				<p>a framework</p>
+			</div>
+			<div class="item item-thumbnail-left">
+				<img src="images/ionic.png">
+				<h2>Ionic</h2>
+				<p>a framework</p>
+			</div>
+		</div>
+
+		<div class="list list-inset">
+
+			<div class="item item-icon-left">
+				<i class="icon ion-game-controller-a"></i>
+				Game controller
+				<span class="badge badge-positive">10</span>
+			</div>
+
+			<div class="item item-avatar">
+				<img src="images/ionic.png">
+				<h2>Ionic</h2>
+				<p>a framework</p>
+			</div>
+			<div class="item item-thumbnail-left">
+				<img src="images/ionic.png">
+				<h2>Ionic</h2>
+				<p>a framework</p>
+			</div>
+		</div>
+
+		<h2>Cards</h2>
+		<div class="card">
+			<div class="item">
+				Card 1
+			</div>
+			<div class="item">
+				Card 2
+			</div>
+		</div>
+
+		<h2>Forms</h2>
+
+		<form class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="Form item 1">
+			</label>
+			<label class="itm item-input">
+				<input type="email" placeholder="email@mail.com">
+			</label>
+		</form>
+
+		<form class="list">
+			<label class="item item-input">
+				<span class="input-label">Long label is long</span>
+				<input type="text">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Shorty</span>
+				<input type="text">
+			</label>
+		</form>
+
+		<form class="list list-inset">
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Stacked label</span>
+				<input type="text" placeholder="Stacked label">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Floating label</span>
+				<input type="text" placeholder="mail@email.com">
+			</label>
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<span class="input-label">Label</span>
+					<input type="text" placeholder="Placeholder">
+				</label>
+				<button class="button button-small">
+					Button
+				</button>
+			</div>
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" placeholder="Search">
+			</label>
+		</form>
+
+		<h2>Toggle, Checkbox, Radio, Range, Select</h2>
+		<label class="toggle">
+			<input type="checkbox">
+			<div class="track">
+				<div class="handle"></div>
+			</div>
+		</label>
+
+		<div class="list">
+			<div class="item item-toggle">
+				Toggle
+				<label class="toggle toggle-calm">
+					<input type="checkbox">
+					<div class="track">
+						<div class="handle"></div>
+					</div>
+				</label>
+			</div>
+
+			<div class="item item-checkbox">
+				<label class="checkbox">
+					<input type="checkbox">
+				</label>
+				Checkbox
+			</div>
+
+			<label class="item item-radio">
+				<input type="radio" name="group">
+				<div class="item-content">Radio</div>
+				<i class="radio-icon ion-leaf"></i>
+			</label>
+
+			<div class="item range range-royal">
+				<i class="icon ion-music-note"></i>
+				<input type="range" name="volume" min="0" max="100" value="5-">
+				<i class="icon ion-radio-waves"></i>
+			</div>
+
+			<label class="item item-input item-select">
+				<div class="input-label">
+					Select
+				</div>
+				<select>
+					<option>option 1</option>
+					<option>option 2</option>
+					<option>option 3</option>
+				</select>
+			</label>
+		</div>
+
+		<h2>Tabs</h2>
+
+		<div class="tabs tabs-icon-top">
+			<div class="tab-item">
+				<i class="icon ion-ios7-toggle-outline"></i>
+				Tab 1
+			</div>
+			<div class="tab-item">
+				<i class="icon ion-ios7-toggle-outline"></i>
+				Tab 2
+			</div>
+		</div>
+
 	</ion-content>
+	<ion-footer-bar class="bar-energized">
+		<h2 class="title">Hello from the bottom!</h2>
+	</ion-footer-bar>
 </ion-view>
