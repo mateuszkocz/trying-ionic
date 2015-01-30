@@ -1,6 +1,6 @@
 angular.module( 'app', [
 	'ionic',
-	'app.views.base',
+	'app.views.menu',
 	'app.views.start',
 	'app.views.css'
 ] )
