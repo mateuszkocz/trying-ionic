@@ -1,7 +1,8 @@
 angular.module( 'app', [
 	'ionic',
-	'module.base',
-	'module.start'
+	'app.views.base',
+	'app.views.start',
+	'app.views.css'
 ] )
 
 	.run( function ( $ionicPlatform ) {
