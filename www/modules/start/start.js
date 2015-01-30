@@ -10,5 +10,5 @@ angular.module( 'module.start', ['ionic'] )
 			}
 		} );
 	} ).controller( 'startController', [function () {
-		
+
 	}] );
