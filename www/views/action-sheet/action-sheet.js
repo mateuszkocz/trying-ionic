@@ -4,12 +4,12 @@ angular.module( 'app.views.action-sheet', ['ionic', 'ngCordova'] )
 			url: '/action-sheet',
 			views: {
 				main: {
-					controller: 'actionSheetViewController as ctrl',
+					controller: 'ActionSheetViewController as ctrl',
 					templateUrl: 'views/action-sheet/action-sheet.html'
 				}
 			}
 		} );
-	} ).controller( 'actionSheetViewController', ['$ionicActionSheet', '$cordovaActionSheet', function ( $ionicActionSheet, $cordovaActionSheet ) {
+	} ).controller( 'ActionSheetViewController', ['$ionicActionSheet', '$cordovaActionSheet', function ( $ionicActionSheet, $cordovaActionSheet ) {
 		var self = this;
 
 		// The Ionic's Action Sheet

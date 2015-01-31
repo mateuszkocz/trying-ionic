@@ -4,9 +4,9 @@ angular.module( 'app.views.menu', ['ionic'] )
 			abstract: true,
 			url: '/app',
 			templateUrl: 'views/menu/menu.html',
-			controller: 'menuViewController as ctrl'
+			controller: 'MenuViewController as ctrl'
 		} )
 	} )
-	.controller( 'menuViewController', [function () {
+	.controller( 'MenuViewController', [function () {
 
 	}] );

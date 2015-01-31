@@ -4,11 +4,11 @@ angular.module( 'app.views.start', ['ionic'] )
 			url: '/start',
 			views: {
 				main: {
-					controller: 'startViewController',
+					controller: 'StartViewController',
 					templateUrl: 'views/start/start.html'
 				}
 			}
 		} );
-	} ).controller( 'startViewController', [function () {
+	} ).controller( 'StartViewController', [function () {
 
 	}] );

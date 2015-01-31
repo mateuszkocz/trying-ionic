@@ -9,6 +9,6 @@ angular.module( 'app.views.css', ['ionic'] )
 				}
 			}
 		} );
-	} ).controller( 'cssViewController', [function () {
+	} ).controller( 'CssViewController', [function () {
 
 	}] );
