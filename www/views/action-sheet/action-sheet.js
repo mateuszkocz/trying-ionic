@@ -13,7 +13,7 @@ angular.module( 'app.views.action-sheet', ['ionic', 'ngCordova'] )
 		var self = this;
 
 		// The Ionic's Action Sheet
-		this.actionTakenInIonicSheet = '(Nothing for now)';
+		this.actionTakenInIonicSheet = '';
 
 		this.showIonicActionSheet = function () {
 			var hideSheet = $ionicActionSheet.show({
@@ -46,7 +46,7 @@ angular.module( 'app.views.action-sheet', ['ionic', 'ngCordova'] )
 		};
 
 		// Cordova's Action Sheet
-		this.actionTakenInCordovaActionSheet = '(Nothing yet)';
+		this.actionTakenInCordovaActionSheet = '';
 
 		this.showCordovaActionSheet = function () {
 			// The HTML doesn't work. Just used for consistency.
