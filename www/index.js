@@ -2,7 +2,8 @@ angular.module( 'app', [
 	'ionic',
 	'app.views.menu',
 	'app.views.start',
-	'app.views.css'
+	'app.views.css',
+	'app.views.action-sheet'
 ] )
 
 	.run( function ( $ionicPlatform ) {
