@@ -1,11 +1,8 @@
 <ion-view view-title="Action Sheet">
 	<ion-content>
 		<h1>Ionic's Action sheet</h1>
+		<p>Action taken: {{ ctrl.actionTaken }}</p>
 		<button class="button button-positive" ng-click="ctrl.showIonicActionSheet()">Show Ionic's Action Sheet</button>
-		<p>Action taken: {{ ctrl.actionTakenInIonicSheet }}</p>
-
-		<h1>Cordova's action sheet</h1>
 		<button class="button button-positive" ng-click="ctrl.showCordovaActionSheet()">Show Cordova's Action Sheet</button>
-		<p>Action taken: {{ ctrl.actionTakenInCordovaActionSheet }}</p>
 	</ion-content>
 </ion-view>
