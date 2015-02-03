@@ -2,8 +2,8 @@ describe( 'View: Action Sheet', function () {
 	var ctrl;
 	var ionicASProps;
 	var cordovaASProps;
-	var ionASMock;
-	var cordovaASMock;
+	var $ionicActionSheet;
+	var $cordovaActionSheet;
 
 	beforeEach( module( 'app.views.action-sheet' ) );
 
@@ -24,8 +24,8 @@ describe( 'View: Action Sheet', function () {
 		ctrl = $controller( 'ActionSheetViewController' );
 		ionicASProps = ionicASProperties;
 		cordovaASProps = cordovaASProperties;
-		ionASMock = _$ionicActionSheet_;
-		cordovaASMock = _$cordovaActionSheet_;
+		$ionicActionSheet = _$ionicActionSheet_;
+		$cordovaActionSheet = _$cordovaActionSheet_;
 	} ) );
 
 	it( 'Controller should be defined.', function () {
@@ -105,14 +105,14 @@ describe( 'View: Action Sheet', function () {
 	} );
 
 	it( 'Ionic\'s Action Sheet should be called when taping the action button.', function () {
-		expect( ionASMock.show.calls.any() ).toEqual( false );
+		expect( $ionicActionSheet.show.calls.any() ).toEqual( false );
 		ctrl.showIonicActionSheet();
-		expect( ionASMock.show.calls.any() ).toEqual( true );
+		expect( $ionicActionSheet.show.calls.any() ).toEqual( true );
 	} );
 
 	it( 'Cordova\'s Action Sheet should be called when taping the action button.', function () {
-		expect( cordovaASMock.show.calls.any() ).toEqual( false );
+		expect( $cordovaActionSheet.show.calls.any() ).toEqual( false );
 		ctrl.showCordovaActionSheet();
-		expect( cordovaASMock.show.calls.any() ).toEqual( true );
+		expect( $cordovaActionSheet.show.calls.any() ).toEqual( true );
 	} );
 } );
