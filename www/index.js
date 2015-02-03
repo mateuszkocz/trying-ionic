@@ -3,7 +3,8 @@ angular.module( 'app', [
 	'app.views.menu',
 	'app.views.start',
 	'app.views.css',
-	'app.views.action-sheet'
+	'app.views.action-sheet',
+	'app.views.backdrop'
 ] )
 
 	.run( function ( $ionicPlatform ) {
