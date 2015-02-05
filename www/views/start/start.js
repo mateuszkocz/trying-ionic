@@ -4,7 +4,7 @@ angular.module( 'app.views.start', ['ionic'] )
 			url: '/start',
 			views: {
 				main: {
-					controller: 'StartViewController',
+					controller: 'StartViewController as ctrl',
 					templateUrl: 'views/start/start.html'
 				}
 			}

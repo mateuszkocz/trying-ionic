@@ -2,30 +2,43 @@ describe( 'View: Backdrop', function () {
 	var ctrl;
 	var $ionicBackdrop;
 	var $timeout;
+	var $state;
 
-	beforeEach( module( 'app.views.backdrop' ) );
+	beforeEach( function () {
+		module( 'app.views.backdrop', 'mocks.menu', function ( $provide ) {
+			$provide.factory( '$ionicBackdrop', function () {
+				return {
+					retain: jasmine.createSpy(),
+					release: jasmine.createSpy()
+				}
+			} );
+		} );
 
-	beforeEach( module( function ( $provide ) {
-		$provide.factory( '$ionicBackdrop', function () {
-			return {
-				retain: jasmine.createSpy(),
-				release: jasmine.createSpy()
-			}
+		inject( function ( $controller, _$ionicBackdrop_, _$timeout_, _$state_ ) {
+			ctrl = $controller( 'BackdropViewController' );
+			$ionicBackdrop = _$ionicBackdrop_;
+			$timeout = _$timeout_;
+			$state = _$state_;
 		} )
-	} ) );
+	} );
 
-	beforeEach( inject( function ( $controller, _$ionicBackdrop_, _$timeout_ ) {
-		ctrl = $controller( 'BackdropViewController' );
-		$ionicBackdrop = _$ionicBackdrop_;
-		$timeout = _$timeout_;
-	} ) );
+	it( 'State is properly defined.', function () {
+		var stateData = $state.get( 'app.backdrop' );
+		expect( stateData.url ).toEqual( '/backdrop' );
+		expect( stateData.views ).toEqual( jasmine.objectContaining({
+			main: {
+				controller: 'BackdropViewController as ctrl',
+				templateUrl: 'views/backdrop/backdrop.html'
+			}
+		}) );
+	} );
 
 	it( 'Controller should be defined.', function () {
 		expect( ctrl ).toBeDefined();
 	} );
 
 	it( 'Controller should have a method `showBackdrop`.', function () {
-		expect( ctrl.showBackdrop ).toEqual( jasmine.any(Function) );
+		expect( ctrl.showBackdrop ).toEqual( jasmine.any( Function ) );
 	} );
 
 	it( 'Calling `showBackdrop` should call the $ionicBackdrop.retain method.', function () {
@@ -34,10 +47,10 @@ describe( 'View: Backdrop', function () {
 		expect( $ionicBackdrop.retain.calls.any() ).toEqual( true );
 	} );
 
-	it( 'Backdrop should hide after 2 seconds.', inject(function ( $httpBackend ) {
+	it( 'Backdrop should hide after 2 seconds.', inject( function ( $httpBackend ) {
 		// FIXME: Template of the view is GET-called using $timeout, so have to expect it.
 		// Otherwise will throw. Obviously something is wrong here.
-		$httpBackend.whenGET().respond('');
+		$httpBackend.whenGET().respond( '' );
 
 		ctrl.showBackdrop();
 		expect( $ionicBackdrop.release.calls.any() ).toEqual( false );
@@ -45,5 +58,5 @@ describe( 'View: Backdrop', function () {
 		expect( $ionicBackdrop.release.calls.any() ).toEqual( false );
 		$timeout.flush( 1999 );
 		expect( $ionicBackdrop.release.calls.any() ).toEqual( true );
-	}) );
+	} ) );
 } );

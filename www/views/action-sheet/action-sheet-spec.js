@@ -4,29 +4,42 @@ describe( 'View: Action Sheet', function () {
 	var cordovaASProps;
 	var $ionicActionSheet;
 	var $cordovaActionSheet;
+	var $state;
 
-	beforeEach( module( 'app.views.action-sheet' ) );
-
-	beforeEach( module( function ( $provide ) {
-		$provide.factory( '$ionicActionSheet', function () {
-			return {
-				show: jasmine.createSpy()
-			}
+	beforeEach( function () {
+		module( 'app.views.action-sheet', 'mocks.menu', function ( $provide ) {
+			$provide.factory( '$ionicActionSheet', function () {
+				return {
+					show: jasmine.createSpy()
+				}
+			} );
+			$provide.factory( '$cordovaActionSheet', function () {
+				return {
+					show: jasmine.createSpy().and.returnValue( {then: function () {}} )
+				}
+			} );
 		} );
-		$provide.factory( '$cordovaActionSheet', function () {
-			return {
-				show: jasmine.createSpy( 'CordovaAS' ).and.returnValue({then: function(){}})
-			}
-		} );
-	} ) );
 
-	beforeEach( inject( function ( $controller, ionicASProperties, cordovaASProperties, _$ionicActionSheet_, _$cordovaActionSheet_ ) {
-		ctrl = $controller( 'ActionSheetViewController' );
-		ionicASProps = ionicASProperties;
-		cordovaASProps = cordovaASProperties;
-		$ionicActionSheet = _$ionicActionSheet_;
-		$cordovaActionSheet = _$cordovaActionSheet_;
-	} ) );
+		inject( function ( $controller, _$state_, ionicASProperties, cordovaASProperties, _$ionicActionSheet_, _$cordovaActionSheet_ ) {
+			ctrl = $controller( 'ActionSheetViewController' );
+			$state = _$state_;
+			ionicASProps = ionicASProperties;
+			cordovaASProps = cordovaASProperties;
+			$ionicActionSheet = _$ionicActionSheet_;
+			$cordovaActionSheet = _$cordovaActionSheet_;
+		} );
+	});
+
+	it( 'State is properly defined.', function () {
+		var stateData = $state.get( 'app.action-sheet' );
+		expect( stateData.url ).toEqual( '/action-sheet' );
+		expect( stateData.views ).toEqual( jasmine.objectContaining({
+			main: {
+				controller: 'ActionSheetViewController as ctrl',
+				templateUrl: 'views/action-sheet/action-sheet.html'
+			}
+		}) );
+	} );
 
 	it( 'Controller should be defined.', function () {
 		expect( ctrl ).toBeDefined();
