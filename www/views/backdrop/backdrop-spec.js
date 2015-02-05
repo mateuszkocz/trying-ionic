@@ -14,11 +14,13 @@ describe( 'View: Backdrop', function () {
 			} );
 		} );
 
-		inject( function ( $controller, _$ionicBackdrop_, _$timeout_, _$state_ ) {
+		inject( function ( $controller, _$ionicBackdrop_, _$timeout_, _$state_, $templateCache ) {
 			ctrl = $controller( 'BackdropViewController' );
 			$ionicBackdrop = _$ionicBackdrop_;
 			$timeout = _$timeout_;
 			$state = _$state_;
+
+			$templateCache.put('views/backdrop/backdrop.html', '');
 		} )
 	} );
 
@@ -48,10 +50,6 @@ describe( 'View: Backdrop', function () {
 	} );
 
 	it( 'Backdrop should hide after 2 seconds.', inject( function ( $httpBackend ) {
-		// FIXME: Template of the view is GET-called using $timeout, so have to expect it.
-		// Otherwise will throw. Obviously something is wrong here.
-		$httpBackend.whenGET().respond( '' );
-
 		ctrl.showBackdrop();
 		expect( $ionicBackdrop.release.calls.any() ).toEqual( false );
 		$timeout.flush( 1 );
