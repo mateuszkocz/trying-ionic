@@ -30,7 +30,7 @@ describe( 'View: Action Sheet', function () {
 		} );
 	});
 
-	it( 'State is properly defined.', function () {
+	it( 'has the properly defined state.', function () {
 		var stateData = $state.get( 'app.action-sheet' );
 		expect( stateData.url ).toEqual( '/action-sheet' );
 		expect( stateData.views ).toEqual( jasmine.objectContaining({
@@ -41,31 +41,31 @@ describe( 'View: Action Sheet', function () {
 		}) );
 	} );
 
-	it( 'Controller should be defined.', function () {
+	it( 'has the controller.', function () {
 		expect( ctrl ).toBeDefined();
 	} );
 
-	it( 'Taken action\'s labels should be initially empty.', function () {
+	it( 'has the initially empty \'taken action\' label.', function () {
 		expect( ctrl.actionTaken ).toEqual( '' );
 	} );
 
-	it( 'Ionic Action Sheet properties should be defined.', function () {
+	it( 'has the defined Ionic Action Sheet properties.', function () {
 		expect( ionicASProps ).toEqual( jasmine.any( Object ) );
 	} );
 
-	it( 'Cordova Action Sheet properties should be defined.', function () {
+	it( 'has the defined Cordova Action Sheet properties.', function () {
 		expect( cordovaASProps ).toBeDefined();
 	} );
 
-	it( 'Properties for both implementation of an AS should have the same number of normal buttons', function () {
+	it( 'has the equal amount of normal buttons defined in the properties.', function () {
 		expect( cordovaASProps.buttonLabels.length ).toEqual( ionicASProps.buttons.length );
 	} );
 
-	it( 'There should be at least one normal button', function () {
+	it( 'has at least one normal button in the both properties objects.', function () {
 		expect( ionicASProps.buttons.length ).toBeGreaterThan( 0 );
 	} );
 
-	it( 'All normal buttons should have a label.', function () {
+	it( 'has labels defined for all the normal buttons', function () {
 		ionicASProps.buttons.forEach( function ( button ) {
 			expect( button.text ).toEqual( jasmine.any( String ) );
 			expect( button.text ).not.toEqual( '' );
@@ -76,29 +76,29 @@ describe( 'View: Action Sheet', function () {
 		} );
 	} );
 
-	it( 'Cancel and destructive buttons should be defined.', function () {
+	it( 'has the destructive and close buttons defined in the both properties objects.', function () {
 		expect( ionicASProps.destructiveText ).toEqual( jasmine.any( String ) );
 		expect( ionicASProps.destructiveText ).not.toEqual( '' );
 		expect( ionicASProps.cancelText ).toEqual( jasmine.any( String ) );
 		expect( ionicASProps.cancelText ).not.toEqual( '' );
 	} );
 
-	it( 'Tapping normal button should change the action indicator.', function () {
+	it( 'changes the action indicator when tapping normal button.', function () {
 		ctrl.buttonAction( 0, {text: 'test'} );
 		expect( ctrl.actionTaken ).toMatch( /test/ );
 	} );
 
-	it( 'Tapping destructive button should change the action indicator.', function () {
+	it( 'changes the action indicator when the destructive button is tapped.', function () {
 		ctrl.destructiveAction();
 		expect( ctrl.actionTaken ).not.toBe( '' );
 	} );
 
-	it( 'Closing the sheet should change the action indicator.', function () {
+	it( 'changes the action indicator when closing the sheet.', function () {
 		ctrl.cancelAction();
 		expect( ctrl.actionTaken ).not.toBe( '' );
 	} );
 
-	it( 'Proxy for Cordova\'s AS plugin implementation should trigger the required valid action.', function () {
+	it( 'normalizes the Cordova\'s AS plugin implementation.', function () {
 		spyOn( ctrl, 'cancelAction' );
 		spyOn( ctrl, 'buttonAction' );
 		spyOn( ctrl, 'destructiveAction' );
@@ -117,13 +117,13 @@ describe( 'View: Action Sheet', function () {
 		expect( ctrl.cancelAction ).toHaveBeenCalled();
 	} );
 
-	it( 'Ionic\'s Action Sheet should be called when taping the action button.', function () {
+	it( 'calls the Ionic\'s Action Sheet when the action button is tapped.', function () {
 		expect( $ionicActionSheet.show.calls.any() ).toEqual( false );
 		ctrl.showIonicActionSheet();
 		expect( $ionicActionSheet.show.calls.any() ).toEqual( true );
 	} );
 
-	it( 'Cordova\'s Action Sheet should be called when taping the action button.', function () {
+	it( 'calls the Cordova\'s Action Sheet when the action button is tapped.', function () {
 		expect( $cordovaActionSheet.show.calls.any() ).toEqual( false );
 		ctrl.showCordovaActionSheet();
 		expect( $cordovaActionSheet.show.calls.any() ).toEqual( true );

@@ -24,7 +24,7 @@ describe( 'View: Backdrop', function () {
 		} )
 	} );
 
-	it( 'State is properly defined.', function () {
+	it( 'should have a properly defined state.', function () {
 		var stateData = $state.get( 'app.backdrop' );
 		expect( stateData.url ).toEqual( '/backdrop' );
 		expect( stateData.views ).toEqual( jasmine.objectContaining({
@@ -35,21 +35,21 @@ describe( 'View: Backdrop', function () {
 		}) );
 	} );
 
-	it( 'Controller should be defined.', function () {
+	it( 'should have a defined controller.', function () {
 		expect( ctrl ).toBeDefined();
 	} );
 
-	it( 'Controller should have a method `showBackdrop`.', function () {
+	it( 'should have a method `showBackdrop` in the controller.', function () {
 		expect( ctrl.showBackdrop ).toEqual( jasmine.any( Function ) );
 	} );
 
-	it( 'Calling `showBackdrop` should call the $ionicBackdrop.retain method.', function () {
+	it( 'should call the $ionicBackdrop.retain method when calling `showBackdrop` ', function () {
 		expect( $ionicBackdrop.retain.calls.any() ).toEqual( false );
 		ctrl.showBackdrop();
 		expect( $ionicBackdrop.retain.calls.any() ).toEqual( true );
 	} );
 
-	it( 'Backdrop should hide after 2 seconds.', inject( function ( $httpBackend ) {
+	it( 'should hide the requested backdrop after 2 seconds.', inject( function ( $httpBackend ) {
 		ctrl.showBackdrop();
 		expect( $ionicBackdrop.release.calls.any() ).toEqual( false );
 		$timeout.flush( 1 );
