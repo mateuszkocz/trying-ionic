@@ -20,7 +20,25 @@ describe( 'View: Backdrop', function () {
 			$timeout = _$timeout_;
 			$state = _$state_;
 
+			// Avoid the fail by the ui-router that asks for template on $timeout.
 			$templateCache.put('views/backdrop/backdrop.html', '');
+
+			/*
+			Other possible solutions to avoid the ui-routers' request for template:
+
+			beforeEach(module(function($ionicConfigProvider) {
+				$ionicConfigProvider.templates.maxPrefetch(0);
+			})));
+
+			If that doesn't work, nuke the $ionicTemplateCache service by stubbing it out:
+
+			beforeEach(module(function($provide) {
+				$provide.value('$ionicTemplateCache', function(){} );
+			}));
+
+			Source: https://github.com/angular-ui/ui-router/issues/212
+			*/
+
 		} )
 	} );
 

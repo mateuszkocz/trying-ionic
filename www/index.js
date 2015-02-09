@@ -4,7 +4,8 @@ angular.module( 'app', [
 	'app.views.start',
 	'app.views.css',
 	'app.views.action-sheet',
-	'app.views.backdrop'
+	'app.views.backdrop',
+	'app.views.content'
 ] )
 
 	.run( function ( $ionicPlatform ) {
