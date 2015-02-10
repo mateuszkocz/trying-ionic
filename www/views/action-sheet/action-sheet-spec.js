@@ -28,17 +28,17 @@ describe( 'View: Action Sheet', function () {
 			$ionicActionSheet = _$ionicActionSheet_;
 			$cordovaActionSheet = _$cordovaActionSheet_;
 		} );
-	});
+	} );
 
 	it( 'has the properly defined state.', function () {
 		var stateData = $state.get( 'app.action-sheet' );
 		expect( stateData.url ).toEqual( '/action-sheet' );
-		expect( stateData.views ).toEqual( jasmine.objectContaining({
+		expect( stateData.views ).toEqual( jasmine.objectContaining( {
 			main: {
 				controller: 'ActionSheetViewController as ctrl',
 				templateUrl: 'views/action-sheet/action-sheet.html'
 			}
-		}) );
+		} ) );
 	} );
 
 	it( 'has the controller.', function () {

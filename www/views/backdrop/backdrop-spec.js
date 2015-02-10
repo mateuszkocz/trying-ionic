@@ -21,23 +21,23 @@ describe( 'View: Backdrop', function () {
 			$state = _$state_;
 
 			// Avoid the fail by the ui-router that asks for template on $timeout.
-			$templateCache.put('views/backdrop/backdrop.html', '');
+			$templateCache.put( 'views/backdrop/backdrop.html', '' );
 
 			/*
-			Other possible solutions to avoid the ui-routers' request for template:
+			 Other possible solutions to avoid the ui-routers' request for template:
 
-			beforeEach(module(function($ionicConfigProvider) {
-				$ionicConfigProvider.templates.maxPrefetch(0);
-			})));
+			 beforeEach(module(function($ionicConfigProvider) {
+			 $ionicConfigProvider.templates.maxPrefetch(0);
+			 })));
 
-			If that doesn't work, nuke the $ionicTemplateCache service by stubbing it out:
+			 If that doesn't work, nuke the $ionicTemplateCache service by stubbing it out:
 
-			beforeEach(module(function($provide) {
-				$provide.value('$ionicTemplateCache', function(){} );
-			}));
+			 beforeEach(module(function($provide) {
+			 $provide.value('$ionicTemplateCache', function(){} );
+			 }));
 
-			Source: https://github.com/angular-ui/ui-router/issues/212
-			*/
+			 Source: https://github.com/angular-ui/ui-router/issues/212
+			 */
 
 		} )
 	} );
@@ -45,12 +45,12 @@ describe( 'View: Backdrop', function () {
 	it( 'should have a properly defined state.', function () {
 		var stateData = $state.get( 'app.backdrop' );
 		expect( stateData.url ).toEqual( '/backdrop' );
-		expect( stateData.views ).toEqual( jasmine.objectContaining({
+		expect( stateData.views ).toEqual( jasmine.objectContaining( {
 			main: {
 				controller: 'BackdropViewController as ctrl',
 				templateUrl: 'views/backdrop/backdrop.html'
 			}
-		}) );
+		} ) );
 	} );
 
 	it( 'should have a defined controller.', function () {

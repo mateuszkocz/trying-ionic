@@ -1,0 +1,23 @@
+<ion-view view-title="Colours">
+	<ion-content ng-style="ctrl.background">
+		<!--<div ng-style="ctrl.background" style="height:20em"></div>-->
+{{ rgb }}
+		<div class="list">
+			<div class="item range range-assertive">
+				<span>0</span>
+				<input type="range" name="red" min="0" max="255" ng-model="ctrl.rgb[0]">
+				<span>255</span>
+			</div>
+			<div class="item range range-balanced">
+				<span>0</span>
+				<input type="range" name="red" min="0" max="255" ng-model="ctrl.rgb[1]">
+				<span>255</span>
+			</div>
+			<div class="item range range-positive">
+				<span>0</span>
+				<input type="range" name="red" min="0" max="255" ng-model="ctrl.rgb[2]">
+				<span>255</span>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
