@@ -1,0 +1,21 @@
+<ion-view view-title="{{ctrl.currentEvent}}">
+	<ion-content>
+		<h1>Events</h1>
+
+		Event: {{ ctrl.currentEvent }}<br>
+		Scroll: {{ ctrl.scrl }}
+
+		<div class="row">
+			<div class="col button button-positive" on-touch="ctrl.events.touch($event)">Touch Me</div>
+			<div class="col button button-positive" on-tap="ctrl.events.tap($event)">Tap Me</div>
+			<div class="col button button-positive" on-hold="ctrl.events.hold($event)">Hold Me</div>
+			<div class="col button button-positive" on-release="ctrl.events.release($event)">Release Me</div>
+		</div>
+		<div class="row">
+			<div class="col button button-positive" on-drag="ctrl.events.drag($event)">Drag Me</div>
+		</div>
+		<div class="row">
+			<div class="col button button-positive" on-drag="ctrl.events.swipe($event)">Swipe Me</div>
+		</div>
+	</ion-content>
+</ion-view>

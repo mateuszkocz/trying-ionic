@@ -6,7 +6,8 @@ angular.module( 'app', [
 	'app.views.action-sheet',
 	'app.views.backdrop',
 	'app.views.content',
-	'app.views.colours'
+	'app.views.colours',
+	'app.views.events'
 ] )
 
 	.run( function ( $ionicPlatform ) {
