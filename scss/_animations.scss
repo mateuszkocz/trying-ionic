@@ -1,0 +1,25 @@
+/* Modal animations */
+@mixin view-animation($name, $initial-state, $visible-state, $animation-in: ease-in-out 400ms, $animation-out: ease-in-out 250ms) {
+  .#{$name} {
+    @include print-rules($initial-state);
+
+    &.ng-enter, & > .ng-enter {
+      -webkit-transition: all $animation-in;
+      transition:         all $animation-in;
+    }
+
+    &.ng-enter-active, & > .ng-enter-active {
+      @include print-rules($visible-state);
+    }
+
+    &.ng-leave, & > .ng-leave {
+      -webkit-transition: all $animation-out;
+      transition:         all $animation-out;
+    }
+  }
+}
+
+@include view-animation('fade-in', ((opacity, 0),), ((opacity, 0.5),));
+@include view-animation('slide-in-down',
+                                        ((-webkit-transform, translate3d(0, -100%, 0)), (transform, translate3d(0, -100%, 0))),
+                                        ((-webkit-transform, translate3d(0, 0, 0)), (transform, translate3d(0, 0, 0))));

@@ -1,0 +1,13 @@
+
+// Prints a single rule from a list (property: value);
+@mixin print-rule-from-list($rule) {
+  #{nth($rule,1)}: nth($rule,2);
+}
+
+// Prints rules from a list of (property: value) items.
+// FIXME: Version of SASS used in the Ionic project doesn't yet allow using @each $property, $value.
+@mixin print-rules($rules-list) {
+  @for $i from 1 through length($rules-list) {
+    @include print-rule-from-list(nth($rules-list, $i));
+  }
+}
