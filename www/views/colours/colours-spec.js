@@ -17,7 +17,6 @@ describe( 'View: Colours', function () {
 
 	it( 'has the properly defined state', function () {
 		var stateData = $state.get( 'app.colours' );
-		console.log( stateData );
 		expect( stateData.url ).toEqual( '/colours' );
 		expect( stateData.views ).toEqual( jasmine.objectContaining( {
 			main: {
