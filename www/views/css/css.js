@@ -4,7 +4,7 @@ angular.module( 'app.views.css', ['ionic'] )
 			url: '/css',
 			views: {
 				main: {
-					controller: 'cssViewController as ctrl',
+					controller: 'CssViewController as ctrl',
 					templateUrl: 'views/css/css.html'
 				}
 			}
