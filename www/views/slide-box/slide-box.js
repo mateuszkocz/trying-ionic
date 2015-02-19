@@ -13,7 +13,6 @@ angular.module( 'app.views.slide-box', ['ionic'] )
 		var slideBox = $ionicSlideBoxDelegate.$getByHandle( 'slider' );
 
 		this.changeSlide = function ( index ) {
-			console.log( slideBox );
 			slideBox.slide( index, 1000 );
 		}
 	}] );

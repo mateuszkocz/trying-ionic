@@ -18,19 +18,19 @@
 		</ion-header-bar>
 		<ion-content>
 			<ion-list>
-				<ion-item nav-clear menu-close ui-sref="app.start">
+				<ion-item nav-clear menu-close ui-sref="app.start" nav-direction="forward">
 					Start Page
 				</ion-item>
-				<ion-item nav-clear menu-close ui-sref="app.css">
+				<ion-item nav-clear menu-close ui-sref="app.css" nav-direction="back">
 					CSS
 				</ion-item>
-				<ion-item nav-clear menu-close ui-sref="app.action-sheet">
+				<ion-item nav-clear menu-close ui-sref="app.action-sheet" nav-direction="enter">
 					Action Sheet
 				</ion-item>
-				<ion-item nav-clear menu-close ui-sref="app.backdrop">
+				<ion-item nav-clear menu-close ui-sref="app.backdrop" nav-direction="exit">
 					Backdrop
 				</ion-item>
-				<ion-item nav-clear menu-close ui-sref="app.content">
+				<ion-item nav-clear menu-close ui-sref="app.content" nav-direction="swap">
 					Content (& scroll)
 				</ion-item>
 				<ion-item nav-clear menu-close ui-sref="app.colours">
@@ -39,10 +39,10 @@
 				<ion-item nav-clear menu-close ui-sref="app.events">
 					Events
 				</ion-item>
-				<ion-item nav-clear menu-close ui-sref="app.modal">
+				<ion-item nav-clear menu-close ui-sref="app.modal" nav-transition="android">
 					Modals
 				</ion-item>
-				<ion-item nav-clear menu-close ui-sref="app.slide-box">
+				<ion-item nav-clear menu-close ui-sref="app.slide-box" nav-transition="ios">
 					Slide Box
 				</ion-item>
 			</ion-list>
