@@ -8,7 +8,8 @@ angular.module( 'app', [
 	'app.views.content',
 	'app.views.colours',
 	'app.views.events',
-	'app.views.modal'
+	'app.views.modal',
+	'app.views.slide-box'
 ] )
 
 	.run( function ( $ionicPlatform ) {
