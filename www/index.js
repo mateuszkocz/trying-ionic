@@ -9,7 +9,8 @@ angular.module( 'app', [
 	'app.views.colours',
 	'app.views.events',
 	'app.views.modal',
-	'app.views.slide-box'
+	'app.views.slide-box',
+	'app.views.popover-popup'
 ] )
 
 	.run( function ( $ionicPlatform ) {
