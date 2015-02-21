@@ -11,7 +11,8 @@ angular.module( 'app', [
 	'app.views.modal',
 	'app.views.slide-box',
 	'app.views.popover-popup',
-	'app.views.tabs'
+	'app.views.tabs',
+	'app.views.list'
 ] )
 
 	.run( function ( $ionicPlatform ) {

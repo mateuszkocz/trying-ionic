@@ -1,0 +1,21 @@
+<ion-view view-title="list">
+	<ion-nav-buttons side="secondary">
+		<button ng-click="ctrl.showRemove = !ctrl.showRemove" class="button button-assertive">Remove</button>
+		<button ng-click="ctrl.showReorder = !ctrl.showReorder" class="button button-positive">Reorder</button>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-list show-delete="ctrl.showRemove" show-reorder="ctrl.showReorder">
+			<ion-item ng-repeat="item in ctrl.items">
+				Item {{ item }}
+
+				<ion-option-button>Option 1</ion-option-button>
+				<ion-option-button>Option 2</ion-option-button>
+				<ion-option-button>Option 3</ion-option-button>
+
+				<ion-delete-button class="ion-android-developer" ng-click="ctrl.items.splice($index,1)"></ion-delete-button>
+
+				<ion-reorder-button class="ion-android-drawer" on-reorder="ctrl.reorderItem(item,$fromIndex,$toIndex)"></ion-reorder-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
