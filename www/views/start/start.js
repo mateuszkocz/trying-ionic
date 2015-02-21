@@ -9,10 +9,13 @@ angular.module( 'app.views.start', ['ionic'] )
 				}
 			}
 		} );
-	} ).controller( 'StartViewController', ['$ionicNavBarDelegate', function ($ionicNavBarDelegate) {
+	} ).controller( 'StartViewController', ['$ionicNavBarDelegate', '$ionicLoading', function ( $ionicNavBarDelegate, $ionicLoading ) {
 		var showBar = true;
 		this.toggleNavBar = function () {
 			showBar = !showBar;
 			$ionicNavBarDelegate.showBar( showBar );
+		};
+		this.toggleLoading = function () {
+			$ionicLoading.show( {duration: 3000, template: 'Loading\u2026'} );
 		}
 	}] );
