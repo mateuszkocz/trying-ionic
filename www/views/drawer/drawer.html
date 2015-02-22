@@ -1,0 +1,33 @@
+<ion-view>
+	<ion-header-bar class="bar-positive">
+		<h1 class="title">Drawer</h1>
+	</ion-header-bar>
+	<drawer side="left">
+		<ion-content>
+			<h2>Menu</h2>
+			<button ng-click="closeDrawer()">Close</button>
+			<ion-list>
+				<ion-item>Friends</ion-item>
+				<ion-item>Favorites</ion-item>
+				<ion-item>Search</ion-item>
+				<ion-item>Favorites</ion-item>
+				<ion-item>Search</ion-item>
+				<ion-item>Favorites</ion-item>
+				<ion-item>Search</ion-item>
+				<ion-item>Favorites</ion-item>
+				<ion-item>Search</ion-item>
+				<ion-item>Favorites</ion-item>
+				<ion-item>Search</ion-item>
+				<ion-item>Favorites</ion-item>
+				<ion-item>Search</ion-item>
+			</ion-list>
+		</ion-content>
+	</drawer>
+
+	<ion-view view-title="ions">
+		<ion-content>
+			<button ng-click="openDrawer()">Open</button>
+			<button class="button button-block button-positive" ui-sref="app.start">Back to the main app</button>
+		</ion-content>
+	</ion-view>
+</ion-view>

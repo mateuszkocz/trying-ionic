@@ -12,7 +12,9 @@ angular.module( 'app', [
 	'app.views.slide-box',
 	'app.views.popover-popup',
 	'app.views.tabs',
-	'app.views.list'
+	'app.views.list',
+	'app.views.ions',
+	'app.views.drawer'
 ] )
 
 	.run( function ( $ionicPlatform ) {

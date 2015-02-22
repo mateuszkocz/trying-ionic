@@ -21,8 +21,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "../www/lib/ionic/scss/ionic";
 
-@import "mixins";
-//@import "animations";
+@import "lib/ionic.contrib.drawer";
 
-@import "views/_colours";
-@import "views/_slide-box";
+@import "mixins";
+@import "animations";
+
+@import "views/colours";
+@import "views/slide-box";
